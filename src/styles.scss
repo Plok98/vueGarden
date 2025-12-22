@@ -106,9 +106,8 @@ body {
    3. NAVIGATION
    ========================================================================== */
 .navigation {
-  background: rgba(248, 250, 252, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(248, 250, 252, 0.98);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1rem 0;
   position: sticky;
   top: 0;
@@ -809,4 +808,3 @@ body {
   }
 }
 
-@view-transition { navigation: auto; }

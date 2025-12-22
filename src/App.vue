@@ -263,11 +263,6 @@ const savePlant = async (payload) => {
 
   const ok = await persistPlant(fullPayload, isUpdate)
   if (ok) {
-    if (isUpdate) {
-      plants.value = plants.value.map((p) => (p.id === fullPayload.id ? fullPayload : p))
-    } else {
-      plants.value = [...plants.value, fullPayload]
-    }
     showPlantModal.value = false
     editingPlantId.value = null
   }
@@ -314,7 +309,6 @@ const addPlantFromDatabase = async (template) => {
   }
   const ok = await persistPlant(payload, false)
   if (ok) {
-    plants.value = [...plants.value, payload]
     showDatabaseModal.value = false
   }
 }
