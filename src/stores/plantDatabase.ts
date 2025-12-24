@@ -20,6 +20,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '24 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Carrot',
@@ -33,6 +35,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'sandy',
       spacing: '2 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'July',
     },
     {
       name: 'Lettuce',
@@ -46,6 +50,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '6 inches',
       plantingDepth: '1/8 inch',
+      plantingStartDate: 'February',
+      plantingEndDate: 'September',
     },
     {
       name: 'Bell Pepper',
@@ -59,6 +65,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '18 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Cucumber',
@@ -72,6 +80,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '36 inches',
       plantingDepth: '1/2 inch',
+      plantingStartDate: 'April',
+      plantingEndDate: 'June',
     },
     {
       name: 'Broccoli',
@@ -85,6 +95,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '18 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Spinach',
@@ -98,6 +110,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '4 inches',
       plantingDepth: '1/2 inch',
+      plantingStartDate: 'February',
+      plantingEndDate: 'September',
     },
     {
       name: 'Radish',
@@ -111,6 +125,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'sandy',
       spacing: '2 inches',
       plantingDepth: '1/2 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'August',
     },
     {
       name: 'Onion',
@@ -124,6 +140,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '4 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'April',
     },
     {
       name: 'Garlic',
@@ -137,6 +155,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '6 inches',
       plantingDepth: '2 inches',
+      plantingStartDate: 'October',
+      plantingEndDate: 'November',
     },
     {
       name: 'Kale',
@@ -150,6 +170,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '12 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'May',
+      plantingEndDate: 'July',
     },
     {
       name: 'Zucchini',
@@ -163,6 +185,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '36 inches',
       plantingDepth: '1 inch',
+      plantingStartDate: 'April',
+      plantingEndDate: 'June',
     },
     {
       name: 'Eggplant',
@@ -176,6 +200,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '24 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Green Beans',
@@ -189,6 +215,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '6 inches',
       plantingDepth: '1 inch',
+      plantingStartDate: 'May',
+      plantingEndDate: 'July',
     },
     {
       name: 'Peas',
@@ -202,6 +230,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '4 inches',
       plantingDepth: '1 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Cabbage',
@@ -215,6 +245,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '18 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Cauliflower',
@@ -228,6 +260,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '18 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Leek',
@@ -241,6 +275,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '6 inches',
       plantingDepth: '1/2 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Brussels Sprouts',
@@ -254,6 +290,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '18 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
 
     // Fruits
@@ -269,6 +307,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '12 inches',
       plantingDepth: 'surface',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Blueberry',
@@ -282,6 +322,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'peaty',
       spacing: '48 inches',
       plantingDepth: 'root level',
+      plantingStartDate: 'March',
+      plantingEndDate: 'April',
     },
     {
       name: 'Raspberry',
@@ -295,6 +337,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '24 inches',
       plantingDepth: 'root level',
+      plantingStartDate: 'November',
+      plantingEndDate: 'March',
     },
     {
       name: 'Blackberry',
@@ -308,6 +352,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '36 inches',
       plantingDepth: 'root level',
+      plantingStartDate: 'November',
+      plantingEndDate: 'March',
     },
     {
       name: 'Watermelon',
@@ -321,6 +367,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'sandy',
       spacing: '72 inches',
       plantingDepth: '1 inch',
+      plantingStartDate: 'April',
+      plantingEndDate: 'May',
     },
     {
       name: 'Cantaloupe',
@@ -334,6 +382,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '36 inches',
       plantingDepth: '1/2 inch',
+      plantingStartDate: 'April',
+      plantingEndDate: 'May',
     },
     {
       name: 'Apple Tree',
@@ -347,6 +397,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '180 inches',
       plantingDepth: 'root level',
+      plantingStartDate: 'November',
+      plantingEndDate: 'March',
     },
     {
       name: 'Pear Tree',
@@ -360,6 +412,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '180 inches',
       plantingDepth: 'root level',
+      plantingStartDate: 'November',
+      plantingEndDate: 'March',
     },
     {
       name: 'Cherry Tree',
@@ -373,6 +427,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '240 inches',
       plantingDepth: 'root level',
+      plantingStartDate: 'November',
+      plantingEndDate: 'March',
     },
     {
       name: 'Grape Vine',
@@ -386,6 +442,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '72 inches',
       plantingDepth: 'root level',
+      plantingStartDate: 'November',
+      plantingEndDate: 'March',
     },
 
     // Herbs
@@ -401,6 +459,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '12 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'April',
+      plantingEndDate: 'June',
     },
     {
       name: 'Rosemary',
@@ -414,6 +474,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'sandy',
       spacing: '24 inches',
       plantingDepth: 'surface',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Thyme',
@@ -427,6 +489,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'sandy',
       spacing: '8 inches',
       plantingDepth: 'surface',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Oregano',
@@ -440,6 +504,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '10 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Parsley',
@@ -453,6 +519,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '6 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Cilantro',
@@ -466,6 +534,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '4 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Mint',
@@ -479,6 +549,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '12 inches',
       plantingDepth: 'surface',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Sage',
@@ -492,6 +564,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'sandy',
       spacing: '18 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Chives',
@@ -505,6 +579,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '6 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Dill',
@@ -518,6 +594,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '8 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Fennel',
@@ -531,6 +609,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '12 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Tarragon',
@@ -544,6 +624,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '18 inches',
       plantingDepth: 'surface',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
 
     // Flowers
@@ -559,6 +641,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '8 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Sunflower',
@@ -572,6 +656,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '24 inches',
       plantingDepth: '1/2 inch',
+      plantingStartDate: 'March',
+      plantingEndDate: 'June',
     },
     {
       name: 'Zinnia',
@@ -585,6 +671,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '12 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'April',
+      plantingEndDate: 'June',
     },
     {
       name: 'Nasturtium',
@@ -598,6 +686,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'sandy',
       spacing: '10 inches',
       plantingDepth: '1/2 inch',
+      plantingStartDate: 'April',
+      plantingEndDate: 'June',
     },
     {
       name: 'Cosmos',
@@ -611,6 +701,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'sandy',
       spacing: '12 inches',
       plantingDepth: '1/4 inch',
+      plantingStartDate: 'April',
+      plantingEndDate: 'June',
     },
     {
       name: 'Lavender',
@@ -624,6 +716,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'sandy',
       spacing: '18 inches',
       plantingDepth: 'surface',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Petunia',
@@ -637,6 +731,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '8 inches',
       plantingDepth: 'surface',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Impatiens',
@@ -650,6 +746,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '8 inches',
       plantingDepth: 'surface',
+      plantingStartDate: 'March',
+      plantingEndDate: 'May',
     },
     {
       name: 'Tulip',
@@ -663,6 +761,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '6 inches',
       plantingDepth: '6 inches',
+      plantingStartDate: 'October',
+      plantingEndDate: 'December',
     },
     {
       name: 'Daffodil',
@@ -676,6 +776,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '6 inches',
       plantingDepth: '6 inches',
+      plantingStartDate: 'September',
+      plantingEndDate: 'November',
     },
     {
       name: 'Hyacinth',
@@ -689,6 +791,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '6 inches',
       plantingDepth: '6 inches',
+      plantingStartDate: 'September',
+      plantingEndDate: 'November',
     },
     {
       name: 'Crocus',
@@ -702,6 +806,8 @@ export const usePlantDatabaseStore = defineStore('plantDatabase', () => {
       soilType: 'loamy',
       spacing: '3 inches',
       plantingDepth: '3 inches',
+      plantingStartDate: 'September',
+      plantingEndDate: 'October',
     },
   ])
 
