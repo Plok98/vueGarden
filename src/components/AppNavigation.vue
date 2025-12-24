@@ -2,9 +2,6 @@
   <nav class="navigation">
     <div class="nav-container">
       <a href="#" class="nav-brand" id="nav-brand">{{ config.app_title }}</a>
-      <button class="language-toggle" id="language-toggle" @click="switchLanguage">
-        {{ t('switchLanguage') }}
-      </button>
       <ul class="nav-links">
         <li v-for="link in navLinks" :key="link.id">
           <a
@@ -17,7 +14,19 @@
             <span class="nav-text">{{ t(link.label) }}</span>
           </a>
         </li>
+        <!-- Language toggle as part of nav on mobile -->
+        <li class="language-toggle-mobile">
+          <button class="nav-link language-btn" @click="switchLanguage">
+            <span class="nav-icon">🌐</span>
+            <span class="nav-text">{{ language === 'en' ? 'NL' : 'EN' }}</span>
+          </button>
+        </li>
       </ul>
+      <!-- Language toggle for desktop -->
+      <button class="language-toggle-desktop" @click="switchLanguage" :title="t('switchLanguage')">
+        <span class="globe-icon">🌐</span>
+        <span class="lang-code">{{ language === 'en' ? 'EN' : 'NL' }}</span>
+      </button>
     </div>
   </nav>
 </template>
@@ -35,7 +44,7 @@ defineEmits<{
   navigate: [page: string]
 }>()
 
-const { t, switchLanguage } = useTranslations()
+const { t, switchLanguage, language } = useTranslations()
 const { config } = useConfig()
 
 const navLinks = computed(() => [
@@ -113,20 +122,45 @@ const navLinks = computed(() => [
   font-size: 0.75rem;
 }
 
-.language-toggle {
-  padding: 0.5rem 1rem;
+/* Desktop language toggle - compact pill style */
+.language-toggle-desktop {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.875rem;
   border: 2px solid var(--seasonal-primary);
   background: transparent;
   color: var(--seasonal-primary);
-  border-radius: 8px;
+  border-radius: 24px;
   cursor: pointer;
   font-weight: 600;
+  font-size: 0.875rem;
   transition: all 0.2s;
 }
 
-.language-toggle:hover {
+.language-toggle-desktop:hover {
   background: var(--seasonal-primary);
   color: white;
+}
+
+.globe-icon {
+  font-size: 1.125rem;
+}
+
+.lang-code {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Mobile language toggle - hide the desktop version */
+.language-toggle-mobile {
+  display: none;
+}
+
+.language-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -170,12 +204,17 @@ const navLinks = computed(() => [
     font-size: 0.625rem;
   }
 
-  .language-toggle {
-    position: absolute;
-    top: 0.75rem;
-    right: 1rem;
-    padding: 0.375rem 0.75rem;
-    font-size: 0.75rem;
+  .language-toggle-desktop {
+    display: none;
+  }
+
+  .language-toggle-mobile {
+    display: block;
+  }
+
+  .language-btn {
+    background: none;
+    border: none;
   }
 }
 </style>
