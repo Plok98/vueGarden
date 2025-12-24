@@ -298,7 +298,7 @@ export function useTranslations() {
 
   const dailyTip = computed(() => {
     const dayIndex = new Date().getDate() % careTips.length
-    const tip = careTips[dayIndex]
+    const tip = careTips[dayIndex] ?? careTips[0]
     return {
       title: tip.title[language.value],
       body: tip.body[language.value],
