@@ -108,7 +108,7 @@ async function addPlantFromDatabase(template: PlantTemplate) {
     name: template.name ?? '',
     type: template.type ?? '',
     variety: '',
-    planting_date: new Date().toISOString().split('T')[0],
+    planting_date: new Date().toISOString().split('T')[0] ?? '',
     harvest_date: '',
     storage_date: '',
     days_to_maturity: String(template.daysToMaturity ?? 0),
