@@ -40,6 +40,9 @@ export const plants: TranslationSet = {
   neverWatered: 'Never',
   waterNow: 'Water',
   justWatered: 'Just watered',
+  plantingWindow: 'Planting Window',
+  timeToPlant: 'Time to Plant!',
+  canBePlantedNow: 'These plants can be started now (this month):',
 }
 
 export const sunTranslations: Record<string, string> = {

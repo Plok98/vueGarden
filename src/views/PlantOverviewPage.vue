@@ -74,8 +74,14 @@
               </div>
             </div>
             <div class="database-card-info">
-              <span>{{ translatePlantType(item.type) }}</span>
-              <span>{{ item.daysToMaturity }} {{ language === 'nl' ? 'dagen' : 'days' }}</span>
+              <div class="info-item">
+                <span class="label">{{ translatePlantType(item.type) }}</span>
+                <span>{{ item.daysToMaturity }} {{ language === 'nl' ? 'dagen' : 'days' }}</span>
+              </div>
+              <div class="info-item planting-window">
+                <span class="label">{{ t('plantingWindow') }}:</span>
+                <span>{{ item.plantingStartDate }} - {{ item.plantingEndDate }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -239,9 +245,25 @@ const filteredDatabasePlants = computed(() => {
 
 .database-card-info {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.5rem;
   font-size: 0.75rem;
   color: var(--seasonal-text);
   opacity: 0.8;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-item.planting-window {
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.label {
+  font-weight: 600;
+  opacity: 0.7;
 }
 </style>

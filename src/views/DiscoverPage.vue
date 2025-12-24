@@ -46,16 +46,45 @@ import { computed } from 'vue'
 import EmptyState from '@/components/EmptyState.vue'
 import { useTranslations } from '@/composables/useTranslations'
 import { useUserPlantsStore } from '@/stores/userPlants'
-import type { Insight } from '@/types'
+import { usePlantDatabaseStore } from '@/stores/plantDatabase'
+import type { Insight, PlantTemplate } from '@/types'
 
 const { t, dailyTip, language } = useTranslations()
 const userPlantsStore = useUserPlantsStore()
+const plantDatabaseStore = usePlantDatabaseStore()
 
 const activePlants = computed(() => userPlantsStore.activePlants)
 
 const discoverInsights = computed((): Insight[] => {
   const insights: Insight[] = []
   const plants = activePlants.value
+
+  // Time to Plant! (Checking from Database)
+  const currentMonthIndex = new Date().getMonth()
+  const monthNames = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ]
+  const seasonalPlants = plantDatabaseStore.plantDatabase.filter((p: PlantTemplate) => {
+    const startIndex = monthNames.indexOf(p.plantingStartDate)
+    const endIndex = monthNames.indexOf(p.plantingEndDate)
+
+    if (startIndex <= endIndex) {
+      return currentMonthIndex >= startIndex && currentMonthIndex <= endIndex
+    } else {
+      // Wrap around case (e.g., October to March)
+      return currentMonthIndex >= startIndex || currentMonthIndex <= endIndex
+    }
+  })
+
+  if (seasonalPlants.length > 0) {
+    insights.push({
+      icon: '🌱',
+      title: t('timeToPlant'),
+      content: t('canBePlantedNow'),
+      plants: seasonalPlants.slice(0, 5).map((p: PlantTemplate) => language.value === 'nl' ? p.nameDutch : p.name)
+    })
+  }
 
   if (plants.length === 0) return insights
 
