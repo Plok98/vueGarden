@@ -25,6 +25,7 @@ export interface Plant {
   soil_type: string
   notes: string
   status: string
+  last_watered?: string
   created_at: string
 }
 
@@ -81,6 +82,8 @@ export interface PlantTemplate {
   soilType: string
   spacing: string
   plantingDepth: string
+  plantingStartDate: string
+  plantingEndDate: string
 }
 
 export interface DataSdk {

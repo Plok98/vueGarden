@@ -35,6 +35,11 @@ export const plants: TranslationSet = {
   plants: 'Plants',
   trees: 'Trees',
   plantDatabase: 'Plant Database',
+  lastWatered: 'Last Watered',
+  nextWatering: 'Next Watering',
+  neverWatered: 'Never',
+  waterNow: 'Water',
+  justWatered: 'Just watered',
 }
 
 export const sunTranslations: Record<string, string> = {

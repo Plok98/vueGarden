@@ -58,6 +58,7 @@ export const useUserPlantsStore = defineStore('userPlants', () => {
       soil_type: '',
       notes: '',
       status: 'planning',
+      last_watered: '',
       created_at: new Date().toISOString(),
     }
   }
@@ -71,6 +72,7 @@ export const useUserPlantsStore = defineStore('userPlants', () => {
       plant.id = `plant-${Date.now()}`
     }
     plant.created_at = new Date().toISOString()
+    plant.last_watered = ''
 
     const result = await window.dataSdk?.create(plant)
     if (result?.isOk) {
@@ -84,10 +86,18 @@ export const useUserPlantsStore = defineStore('userPlants', () => {
     if (result?.isOk) {
       const index = allData.value.findIndex((p) => p.id === plant.id)
       if (index !== -1) {
-        allData.value[index] = plant
+        allData.value[index] = { ...plant }
       }
     }
     return result
+  }
+
+  async function waterPlant(plant: Plant) {
+    const updatedPlant = {
+      ...plant,
+      last_watered: new Date().toISOString(),
+    }
+    return await updatePlant(updatedPlant)
   }
 
   async function deletePlant(plant: Plant) {
@@ -139,6 +149,7 @@ export const useUserPlantsStore = defineStore('userPlants', () => {
     setAllData,
     addPlant,
     updatePlant,
+    waterPlant,
     deletePlant,
     saveProfile,
     createBlankPlant,
