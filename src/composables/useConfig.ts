@@ -54,7 +54,7 @@ function getSeasonalColors(): {
 const { season: currentSeason, colors: seasonalColors } = getSeasonalColors()
 
 const defaultConfig: AppConfig = {
-  app_title: 'My Garden Planner',
+  app_title: 'Groenboek',
   subtitle: 'Track your plants from seed to harvest',
   add_button_text: '+ Add New Plant',
   current_language: 'English',
