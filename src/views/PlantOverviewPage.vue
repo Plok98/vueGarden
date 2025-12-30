@@ -37,24 +37,6 @@
     </div>
 
     <div class="content-sections">
-      <!-- User's Plants Section -->
-      <section class="section">
-        <h2 class="section-title">{{ language === 'nl' ? 'Mijn Planten' : 'My Plants' }}</h2>
-        <div class="plant-grid">
-          <EmptyState
-            v-if="filteredUserPlants.length === 0"
-            icon="bi-journal-text"
-            :title="t('noPastPlantsTitle')"
-            :message="t('noPastPlantsMessage')"
-          />
-          <PlantCard
-            v-for="plant in filteredUserPlants"
-            :key="plant.id"
-            :plant="plant"
-            :show-actions="false"
-          />
-        </div>
-      </section>
 
       <!-- Database Plants Section -->
       <section class="section">
@@ -92,10 +74,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import EmptyState from '@/components/EmptyState.vue'
-import PlantCard from '@/components/PlantCard.vue'
 import { useTranslations } from '@/composables/useTranslations'
-import { useUserPlantsStore } from '@/stores/userPlants'
 import { usePlantDatabaseStore } from '@/stores/plantDatabase'
 import type { PlantTemplate } from '@/types'
 
@@ -104,14 +83,10 @@ defineEmits<{
 }>()
 
 const { t, language, translatePlantType } = useTranslations()
-const userPlantsStore = useUserPlantsStore()
 const plantDatabaseStore = usePlantDatabaseStore()
 
 const currentFilter = ref('all')
 
-const filteredUserPlants = computed(() =>
-  userPlantsStore.getPlantsByType(currentFilter.value)
-)
 
 const filteredDatabasePlants = computed(() => {
   if (currentFilter.value === 'all') {
@@ -192,11 +167,6 @@ const filteredDatabasePlants = computed(() => {
   margin: 0 0 1.5rem 0;
 }
 
-.plant-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.5rem;
-}
 
 .database-grid {
   display: grid;
