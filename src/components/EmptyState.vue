@@ -1,6 +1,7 @@
 <template>
   <div class="empty-state">
-    <div class="empty-state-icon">{{ icon }}</div>
+    <i v-if="icon.startsWith('bi-')" :class="['empty-state-icon', 'bi', icon]"></i>
+    <div v-else class="empty-state-icon">{{ icon }}</div>
     <h3>{{ title }}</h3>
     <p>{{ message }}</p>
     <slot></slot>

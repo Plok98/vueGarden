@@ -43,7 +43,7 @@
         <div class="plant-grid">
           <EmptyState
             v-if="filteredUserPlants.length === 0"
-            icon="📚"
+            icon="bi-journal-text"
             :title="t('noPastPlantsTitle')"
             :message="t('noPastPlantsMessage')"
           />

@@ -17,7 +17,7 @@
           @click="handleWater"
           :title="t('waterNow')"
         >
-          <span class="water-icon">💧</span>
+          <i class="water-icon bi bi-droplet-fill"></i>
           <span class="water-text">{{ isRecentlyWatered ? t('justWatered') : t('waterNow') }}</span>
         </button>
       </div>

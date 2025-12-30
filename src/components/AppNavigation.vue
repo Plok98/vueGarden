@@ -10,21 +10,22 @@
             :class="{ active: currentPage === link.id }"
             @click.prevent="$emit('navigate', link.id)"
           >
-            <span class="nav-icon">{{ link.icon }}</span>
+            <i v-if="link.icon.startsWith('bi-')" :class="['nav-icon', link.icon]"></i>
+            <span v-else class="nav-icon">{{ link.icon }}</span>
             <span class="nav-text">{{ t(link.label) }}</span>
           </a>
         </li>
         <!-- Language toggle as part of nav on mobile -->
         <li class="language-toggle-mobile">
           <button class="nav-link language-btn" @click="switchLanguage">
-            <span class="nav-icon">🌐</span>
+            <i class="nav-icon bi bi-globe"></i>
             <span class="nav-text">{{ language === 'en' ? 'NL' : 'EN' }}</span>
           </button>
         </li>
       </ul>
       <!-- Language toggle for desktop -->
       <button class="language-toggle-desktop" @click="switchLanguage" :title="t('switchLanguage')">
-        <span class="globe-icon">🌐</span>
+        <i class="globe-icon bi bi-globe"></i>
         <span class="lang-code">{{ language === 'en' ? 'EN' : 'NL' }}</span>
       </button>
     </div>
@@ -48,10 +49,10 @@ const { t, switchLanguage, language } = useTranslations()
 const { config } = useConfig()
 
 const navLinks = computed(() => [
-  { id: 'dashboard', icon: '👤', label: 'profile' },
-  { id: 'discover', icon: '🌿', label: 'discover' },
-  { id: 'my-garden', icon: '🌱', label: 'myGarden' },
-  { id: 'plant-overview', icon: '📚', label: 'pastPlants' }
+  { id: 'dashboard', icon: 'bi-person-fill', label: 'profile' },
+  { id: 'discover', icon: 'bi-compass', label: 'discover' },
+  { id: 'my-garden', icon: 'bi-flower3', label: 'myGarden' },
+  { id: 'plant-overview', icon: 'bi-journal-text', label: 'pastPlants' }
 ])
 </script>
 

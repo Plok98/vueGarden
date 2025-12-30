@@ -8,14 +8,14 @@
     <div id="discover-content">
       <EmptyState
         v-if="activePlants.length === 0"
-        icon="🌿"
+        icon="bi-compass"
         :title="t('welcomeMessage')"
         :message="t('addPlantsMessage')"
       />
 
       <template v-else>
         <div v-if="dailyTip" class="care-tip-card">
-          <h3>💡 {{ dailyTip.title }}</h3>
+          <h3><i class="bi bi-lightbulb-fill"></i> {{ dailyTip.title }}</h3>
           <p>{{ dailyTip.body }}</p>
         </div>
 
@@ -27,7 +27,8 @@
             :key="insight.title"
           >
             <div class="insight-header">
-              <span class="insight-icon">{{ insight.icon }}</span>
+              <i v-if="insight.icon.startsWith('bi-')" :class="['insight-icon', 'bi', insight.icon]"></i>
+              <span v-else class="insight-icon">{{ insight.icon }}</span>
               <h3 class="insight-title">{{ insight.title }}</h3>
             </div>
             <div class="insight-content">{{ insight.content }}</div>
@@ -79,7 +80,7 @@ const discoverInsights = computed((): Insight[] => {
 
   if (seasonalPlants.length > 0) {
     insights.push({
-      icon: '🌱',
+      icon: 'bi-leaf',
       title: t('timeToPlant'),
       content: t('canBePlantedNow'),
       plants: seasonalPlants.slice(0, 5).map((p: PlantTemplate) => language.value === 'nl' ? p.nameDutch : p.name)
@@ -92,7 +93,7 @@ const discoverInsights = computed((): Insight[] => {
   const needsWater = plants.filter(p => p.water_frequency === 'daily')
   if (needsWater.length > 0) {
     insights.push({
-      icon: '💧',
+      icon: 'bi-droplet-fill',
       title: language.value === 'nl' ? 'Water Vandaag' : 'Water Today',
       content: language.value === 'nl'
         ? `${needsWater.length} planten hebben dagelijks water nodig`
@@ -105,7 +106,7 @@ const discoverInsights = computed((): Insight[] => {
   const ready = plants.filter(p => p.status === 'ready')
   if (ready.length > 0) {
     insights.push({
-      icon: '🎉',
+      icon: 'bi-trophy-fill',
       title: language.value === 'nl' ? 'Klaar voor Oogst' : 'Ready to Harvest',
       content: language.value === 'nl'
         ? `${ready.length} planten zijn klaar om te oogsten!`
@@ -118,7 +119,7 @@ const discoverInsights = computed((): Insight[] => {
   const growing = plants.filter(p => p.status === 'growing')
   if (growing.length > 0) {
     insights.push({
-      icon: '🌱',
+      icon: 'bi-leaf',
       title: language.value === 'nl' ? 'Actief Groeiend' : 'Actively Growing',
       content: language.value === 'nl'
         ? `${growing.length} planten groeien momenteel`
@@ -129,7 +130,7 @@ const discoverInsights = computed((): Insight[] => {
 
   // AI suggestion placeholder
   insights.push({
-    icon: '🤖',
+    icon: 'bi-robot',
     title: language.value === 'nl' ? 'Aanbeveling' : 'Recommendation',
     content: language.value === 'nl'
       ? 'Overweeg om basilicum bij je tomaten te planten voor een betere groei.'
@@ -201,7 +202,7 @@ const discoverInsights = computed((): Insight[] => {
 }
 
 .insight-card.ai-suggestion::before {
-  content: "🤖 AI";
+  content: "AI";
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;

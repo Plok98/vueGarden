@@ -49,7 +49,7 @@
     <div class="plant-grid">
       <EmptyState
         v-if="filteredPlants.length === 0"
-        icon="🌱"
+        icon="bi-flower3"
         :title="t('noPlantsTitle')"
         :message="t('noPlantsMessage')"
       />

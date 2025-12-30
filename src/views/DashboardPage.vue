@@ -8,7 +8,8 @@
     <section class="profile-card">
       <div class="profile-header">
         <div class="profile-avatar">
-          {{ userProfile.name ? userProfile.name.charAt(0).toUpperCase() : '👤' }}
+          {{ userProfile.name ? userProfile.name.charAt(0).toUpperCase() : '' }}
+          <i v-if="!userProfile.name" class="bi bi-person-fill"></i>
         </div>
         <div class="profile-info">
           <h2>{{ userProfile.name || t('profileTitle') }}</h2>
