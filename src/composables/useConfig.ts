@@ -19,32 +19,32 @@ function getSeasonalColors(): {
 
   const seasonalPalettes: Record<'spring' | 'summer' | 'fall' | 'winter', SeasonalPalette> = {
     spring: {
-      background_color: '#22c55e',
+      background_color: '#3e4524',
       card_color: '#ffffff',
-      text_color: '#1f2937',
-      primary_action_color: '#eab308',
-      secondary_action_color: '#84cc16',
+      text_color: '#000000',
+      primary_action_color: '#ffcf13',
+      secondary_action_color: '#ffcf13',
     },
     summer: {
-      background_color: '#eab308',
+      background_color: '#3e4524',
       card_color: '#ffffff',
-      text_color: '#1f2937',
-      primary_action_color: '#dc2626',
-      secondary_action_color: '#f97316',
+      text_color: '#000000',
+      primary_action_color: '#ffcf13',
+      secondary_action_color: '#ffcf13',
     },
     fall: {
-      background_color: '#dc2626',
+      background_color: '#3e4524',
       card_color: '#ffffff',
-      text_color: '#1f2937',
-      primary_action_color: '#ea580c',
-      secondary_action_color: '#d97706',
+      text_color: '#000000',
+      primary_action_color: '#ffcf13',
+      secondary_action_color: '#ffcf13',
     },
     winter: {
-      background_color: '#1e40af',
-      card_color: '#f8fafc',
-      text_color: '#1e293b',
-      primary_action_color: '#0ea5e9',
-      secondary_action_color: '#3b82f6',
+      background_color: '#3e4524',
+      card_color: '#ffffff',
+      text_color: '#000000',
+      primary_action_color: '#ffcf13',
+      secondary_action_color: '#ffcf13',
     },
   }
 
@@ -69,9 +69,17 @@ const defaultConfig: AppConfig = {
 
 const config = ref<AppConfig>({ ...defaultConfig })
 
+function hexToRgb(hex: string): string {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+  return result
+    ? `${parseInt(result[1] || '0', 16)}, ${parseInt(result[2] || '0', 16)}, ${parseInt(result[3] || '0', 16)}`
+    : '0, 0, 0'
+}
+
 export function useConfig() {
   const applyConfigStyles = () => {
     document.body.style.background = `linear-gradient(135deg, ${config.value.background_color} 0%, ${config.value.secondary_action_color} 100%)`
+    document.body.style.backgroundAttachment = 'fixed'
     document.body.style.fontFamily = config.value.font_family
     document.body.style.fontSize = `${config.value.font_size}px`
 
@@ -81,6 +89,8 @@ export function useConfig() {
     root.style.setProperty('--seasonal-card', config.value.card_color)
     root.style.setProperty('--seasonal-text', config.value.text_color)
     root.style.setProperty('--seasonal-primary', config.value.primary_action_color)
+    root.style.setProperty('--seasonal-primary-rgb', hexToRgb(config.value.primary_action_color))
+    root.style.setProperty('--seasonal-text-rgb', hexToRgb(config.value.text_color))
     root.style.setProperty('--seasonal-secondary', config.value.secondary_action_color)
   }
 

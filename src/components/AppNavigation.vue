@@ -1,7 +1,9 @@
 <template>
   <nav class="navigation">
     <div class="nav-container">
-      <a href="#" class="nav-brand" id="nav-brand">{{ config.app_title }}</a>
+      <a href="#" class="nav-brand" id="nav-brand">
+        <img src="@/assets/logo.svg" :alt="config.app_title" class="brand-logo" />
+      </a>
       <ul class="nav-links">
         <li v-for="link in navLinks" :key="link.id">
           <a
@@ -76,10 +78,22 @@ const navLinks = computed(() => [
 }
 
 .nav-brand {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--seasonal-primary);
+  display: flex;
+  align-items: center;
   text-decoration: none;
+  background: transparent !important;
+  padding: 0;
+}
+
+.brand-logo {
+  height: 64px;
+  width: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: transform 0.2s;
+}
+
+.brand-logo:hover {
+  transform: scale(1.05);
 }
 
 .nav-links {

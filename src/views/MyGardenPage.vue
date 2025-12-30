@@ -1,7 +1,10 @@
 <template>
   <div class="page">
     <header class="header">
-      <h1>{{ t('myGardenTitle') }}</h1>
+      <h1 v-if="t('myGardenTitle') === 'Groen'" class="logo-title">
+        <img src="@/assets/logo.svg" alt="Groen" class="logo-img" />
+      </h1>
+      <h1 v-else>{{ t('myGardenTitle') }}</h1>
       <p>{{ t('myGardenSubtitle') }}</p>
     </header>
 
@@ -106,6 +109,18 @@ async function handleDelete(plant: Plant) {
   font-size: 2.5rem;
   color: white;
   margin: 0 0 0.5rem 0;
+}
+
+.logo-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.logo-img {
+  height: 120px;
+  width: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
 .header p {

@@ -1,7 +1,11 @@
 <template>
   <div class="page">
     <header class="header">
-      <h1>{{ t('discoverTitle') }}</h1>
+      <h1 class="discover-logo-title">
+        <span v-if="language === 'nl'">Ontdek</span>
+        <span v-else>Discover</span>
+        <img src="@/assets/logo.svg" alt="Groen" class="inline-logo" />
+      </h1>
       <p>{{ t('discoverSubtitle') }}</p>
     </header>
 
@@ -152,6 +156,19 @@ const discoverInsights = computed((): Insight[] => {
   font-size: 2.5rem;
   color: white;
   margin: 0 0 0.5rem 0;
+}
+
+.discover-logo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 2.5rem;
+}
+
+.inline-logo {
+  height: 80px;
+  width: auto;
 }
 
 .header p {

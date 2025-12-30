@@ -153,19 +153,20 @@ body {
   box-sizing: border-box;
   font-family: Roboto;
   background: linear-gradient(135deg, var(--seasonal-background) 0%, var(--seasonal-background-secondary) 100%);
+  background-attachment: fixed;
   min-height: 100%;
 }
 
 :root {
-  --seasonal-background: #1e40af;
-  --seasonal-background-secondary: #3b82f6;
-  --seasonal-card: #f8fafc;
-  --seasonal-text: #1e293b;
-  --seasonal-primary: #0ea5e9;
-  --seasonal-secondary: #3b82f6;
-  --seasonal-primary-rgb: 14, 165, 233;
-  --seasonal-secondary-rgb: 59, 130, 246;
-  --seasonal-text-rgb: 30, 41, 59;
+  --seasonal-background: #3e4524;
+  --seasonal-background-secondary: #ffcf13;
+  --seasonal-card: #ffffff;
+  --seasonal-text: #000000;
+  --seasonal-primary: #ffcf13;
+  --seasonal-secondary: #ffcf13;
+  --seasonal-primary-rgb: 255, 207, 19;
+  --seasonal-secondary-rgb: 255, 207, 19;
+  --seasonal-text-rgb: 0, 0, 0;
 }
 
 * {
@@ -190,53 +191,20 @@ body {
   padding: 0 2rem;
 }
 
-/* Seasonal themes */
-.seasonal-spring {
-  --seasonal-background: #22c55e;
-  --seasonal-background-secondary: #84cc16;
-  --seasonal-card: #ffffff;
-  --seasonal-text: #1f2937;
-  --seasonal-primary: #eab308;
-  --seasonal-secondary: #84cc16;
-  --seasonal-primary-rgb: 234, 179, 8;
-  --seasonal-secondary-rgb: 132, 204, 22;
-  --seasonal-text-rgb: 31, 41, 55;
-}
-
-.seasonal-summer {
-  --seasonal-background: #eab308;
-  --seasonal-background-secondary: #f97316;
-  --seasonal-card: #ffffff;
-  --seasonal-text: #1f2937;
-  --seasonal-primary: #dc2626;
-  --seasonal-secondary: #f97316;
-  --seasonal-primary-rgb: 220, 38, 38;
-  --seasonal-secondary-rgb: 249, 115, 22;
-  --seasonal-text-rgb: 31, 41, 55;
-}
-
-.seasonal-fall {
-  --seasonal-background: #dc2626;
-  --seasonal-background-secondary: #d97706;
-  --seasonal-card: #ffffff;
-  --seasonal-text: #1f2937;
-  --seasonal-primary: #ea580c;
-  --seasonal-secondary: #d97706;
-  --seasonal-primary-rgb: 234, 88, 12;
-  --seasonal-secondary-rgb: 217, 119, 6;
-  --seasonal-text-rgb: 31, 41, 55;
-}
-
+/* Seasonal themes - Unified Brand Palette */
+.seasonal-spring,
+.seasonal-summer,
+.seasonal-fall,
 .seasonal-winter {
-  --seasonal-background: #1e40af;
-  --seasonal-background-secondary: #3b82f6;
-  --seasonal-card: #f8fafc;
-  --seasonal-text: #1e293b;
-  --seasonal-primary: #0ea5e9;
-  --seasonal-secondary: #3b82f6;
-  --seasonal-primary-rgb: 14, 165, 233;
-  --seasonal-secondary-rgb: 59, 130, 246;
-  --seasonal-text-rgb: 30, 41, 59;
+  --seasonal-background: #3e4524;
+  --seasonal-background-secondary: #ffcf13;
+  --seasonal-card: #ffffff;
+  --seasonal-text: #000000;
+  --seasonal-primary: #ffcf13;
+  --seasonal-secondary: #ffcf13;
+  --seasonal-primary-rgb: 255, 207, 19;
+  --seasonal-secondary-rgb: 255, 207, 19;
+  --seasonal-text-rgb: 0, 0, 0;
 }
 
 @media (max-width: 1024px) {
