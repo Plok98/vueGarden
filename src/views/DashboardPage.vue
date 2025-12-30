@@ -15,9 +15,15 @@
           <h2>{{ userProfile.name || t('profileTitle') }}</h2>
           <p>{{ userProfile.bio || t('profileSubtitle') }}</p>
         </div>
-        <button class="button button-secondary" @click="$emit('editProfile')">
-          {{ t('editProfile') }}
-        </button>
+        <div class="profile-actions">
+          <button class="button button-secondary" @click="$emit('editProfile')">
+            {{ t('editProfile') }}
+          </button>
+          <button type="button" class="lang-switch-btn mobile-only" @click="switchLanguage">
+            <i class="bi bi-globe"></i>
+            {{ language === 'en' ? 'NL' : 'EN' }}
+          </button>
+        </div>
       </div>
 
       <div class="profile-grid">
@@ -70,7 +76,7 @@ defineEmits<{
   editProfile: []
 }>()
 
-const { t, translateExperience, translateGardenSize } = useTranslations()
+const { t, translateExperience, translateGardenSize, switchLanguage, language } = useTranslations()
 const userPlantsStore = useUserPlantsStore()
 
 const userProfile = computed(() => userPlantsStore.userProfile)
@@ -205,10 +211,47 @@ const stats = computed(() => userPlantsStore.stats)
   color: var(--seasonal-text);
 }
 
+.profile-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.lang-switch-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid var(--seasonal-primary);
+  background: transparent;
+  color: var(--seasonal-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.lang-switch-btn:hover {
+  background: var(--seasonal-primary);
+  color: white;
+}
+
+.mobile-only {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .mobile-only {
+    display: flex;
+  }
   .profile-header {
     flex-direction: column;
     text-align: center;
+  }
+  .profile-actions {
+    width: 100%;
+    justify-content: center;
   }
 }
 </style>

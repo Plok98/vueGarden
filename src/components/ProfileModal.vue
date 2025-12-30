@@ -5,6 +5,7 @@
         <h2>{{ t('profileTitle') }}</h2>
         <button class="close-button" @click="$emit('close')">×</button>
       </div>
+
       <form @submit.prevent="handleSubmit">
         <div class="form-group">
           <label for="user-name">{{ t('name') }}</label>
@@ -45,6 +46,7 @@
           <label for="user-bio">{{ t('bio') }}</label>
           <textarea id="user-bio" v-model="form.bio" placeholder="Tell us about your gardening journey..."></textarea>
         </div>
+
         <div class="form-actions">
           <button type="button" class="button button-secondary" @click="$emit('close')">
             {{ t('cancel') }}

@@ -17,4 +17,6 @@ export const pages: TranslationSet = {
   addPlantsMessage: 'Begin met het toevoegen van planten voor persoonlijke inzichten.',
   noResultsTitle: 'Geen resultaten',
   noResultsMessage: 'Probeer een andere zoekterm.',
+  appSettings: 'App Instellingen',
+  changeLanguage: 'Taal Wijzigen',
 }

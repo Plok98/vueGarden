@@ -17,4 +17,6 @@ export const pages: TranslationSet = {
   addPlantsMessage: 'Start by adding some plants to see personalized insights.',
   noResultsTitle: 'No results found',
   noResultsMessage: 'Try a different search term.',
+  appSettings: 'App Settings',
+  changeLanguage: 'Change Language',
 }

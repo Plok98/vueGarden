@@ -17,13 +17,6 @@
             <span class="nav-text">{{ t(link.label) }}</span>
           </a>
         </li>
-        <!-- Language toggle as part of nav on mobile -->
-        <li class="language-toggle-mobile">
-          <button class="nav-link language-btn" @click="switchLanguage">
-            <i class="nav-icon bi bi-globe"></i>
-            <span class="nav-text">{{ language === 'en' ? 'NL' : 'EN' }}</span>
-          </button>
-        </li>
       </ul>
       <!-- Language toggle for desktop -->
       <button class="language-toggle-desktop" @click="switchLanguage" :title="t('switchLanguage')">
@@ -167,16 +160,6 @@ const navLinks = computed(() => [
   letter-spacing: 0.5px;
 }
 
-/* Mobile language toggle - hide the desktop version */
-.language-toggle-mobile {
-  display: none;
-}
-
-.language-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
 
 @media (max-width: 768px) {
   .navigation {
@@ -221,15 +204,6 @@ const navLinks = computed(() => [
 
   .language-toggle-desktop {
     display: none;
-  }
-
-  .language-toggle-mobile {
-    display: block;
-  }
-
-  .language-btn {
-    background: none;
-    border: none;
   }
 }
 </style>
