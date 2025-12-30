@@ -142,7 +142,7 @@ body, html {
 
 body {
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: Roboto;
   background: linear-gradient(135deg, var(--seasonal-background) 0%, var(--seasonal-background-secondary) 100%);
   min-height: 100%;
 }

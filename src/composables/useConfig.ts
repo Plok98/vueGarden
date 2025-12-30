@@ -63,7 +63,7 @@ const defaultConfig: AppConfig = {
   text_color: seasonalColors.text_color,
   primary_action_color: seasonalColors.primary_action_color,
   secondary_action_color: seasonalColors.secondary_action_color,
-  font_family: 'sans-serif',
+  font_family: 'Roboto',
   font_size: 16,
 }
 

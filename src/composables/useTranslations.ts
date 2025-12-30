@@ -12,7 +12,7 @@ import {
 } from '@/i18n'
 
 // Shared state
-const language = ref<Language>('en')
+const language = ref<Language>('nl')
 
 export function useTranslations() {
   const t = (key: string): string => {
