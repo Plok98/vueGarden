@@ -50,7 +50,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import type { Plant, PlantTemplate } from '@/types'
 
 // Components
@@ -74,8 +75,16 @@ const { seasonClass } = useConfig()
 const { initializeSdks } = useSdk()
 const userPlantsStore = useUserPlantsStore()
 
+const route = useRoute()
+const router = useRouter()
+
 // Navigation
-const currentPage = ref('dashboard')
+const currentPage = computed({
+  get: () => (route.params.page as string) || 'dashboard',
+  set: (newPage) => {
+    router.push({ name: 'home', params: { page: newPage } })
+  }
+})
 
 function setPage(page: string) {
   currentPage.value = page
