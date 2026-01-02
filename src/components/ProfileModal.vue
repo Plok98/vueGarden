@@ -2,8 +2,16 @@
   <div class="modal" :class="{ active: isOpen }" @click.self="$emit('close')">
     <div class="modal-content">
       <div class="modal-header">
-        <h2>{{ t('profileTitle') }}</h2>
-        <button class="close-button" @click="$emit('close')">×</button>
+        <div class="header-main">
+          <h2>{{ t('profileTitle') }}</h2>
+          <div class="header-actions">
+            <button type="button" class="lang-switch-btn" @click="switchLanguage" :title="t('switchLanguage')">
+              <i class="bi bi-globe"></i>
+              {{ language === 'en' ? 'NL' : 'EN' }}
+            </button>
+            <button class="close-button" @click="$emit('close')">×</button>
+          </div>
+        </div>
       </div>
 
       <form @submit.prevent="handleSubmit">
@@ -75,7 +83,7 @@ const emit = defineEmits<{
   saved: []
 }>()
 
-const { t } = useTranslations()
+const { t, switchLanguage, language } = useTranslations()
 const userPlantsStore = useUserPlantsStore()
 
 const form = reactive<UserProfile>({
@@ -134,18 +142,42 @@ async function handleSubmit() {
 }
 
 .modal-header {
+  border-bottom: 2px solid rgba(var(--seasonal-text-rgb), 0.1);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.header-main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid rgba(var(--seasonal-text-rgb), 0.1);
+  width: 100%;
 }
 
-.modal-header h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: var(--seasonal-text);
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-switch-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1.5px solid var(--seasonal-primary);
+  background: transparent;
+  color: var(--seasonal-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  transition: all 0.2s;
+}
+
+.lang-switch-btn:hover {
+  background: var(--seasonal-primary);
+  color: white;
 }
 
 .close-button {
@@ -155,6 +187,9 @@ async function handleSubmit() {
   cursor: pointer;
   color: var(--seasonal-text);
   opacity: 0.5;
+  line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 .form-row {
