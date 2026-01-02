@@ -160,14 +160,14 @@ const discoverInsights = computed((): Insight[] => {
 
 .discover-logo-title {
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: center;
   gap: 0.75rem;
   font-size: 2.5rem;
 }
 
 .inline-logo {
-  height: 80px;
+  height: 65px;
   width: auto;
 }
 
